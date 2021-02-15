@@ -10,6 +10,7 @@ p.setGravity(0,0,-9.8)
 
 # add environment and objects
 planeId = p.loadURDF("plane.urdf")
+planeId = p.loadURDF("body.urdf")
 p.loadSDF("world.sdf")
 
 for i in range(1000000):
