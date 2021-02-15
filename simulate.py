@@ -10,7 +10,7 @@ p.setGravity(0,0,-9.8)
 
 # add environment and objects
 planeId = p.loadURDF("plane.urdf")
-p.loadSDF("boxes.sdf")
+p.loadSDF("world.sdf")
 
 for i in range(1000000):
     p.stepSimulation()
