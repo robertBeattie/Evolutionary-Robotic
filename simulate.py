@@ -16,14 +16,17 @@ planeId = p.loadURDF("body.urdf")
 p.loadSDF("world.sdf")
 
 pyrosim.Prepare_To_Simulate("body.urdf")
-backLegSensorValues = np.zeros(10000)
+LOOP_LENGTH = 1000
+backLegSensorValues = np.zeros(LOOP_LENGTH)
+frontLegSensorValues = np.zeros(LOOP_LENGTH)
 
-for i in range(1000):
+for i in range(LOOP_LENGTH):
     p.stepSimulation()
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-
+    frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
 
     time.sleep(1/240)
 p.disconnect()
-print(backLegSensorValues)
+#print(backLegSensorValues)
 np.save('data//backLegSensorValues.npy',backLegSensorValues)
+np.save('data//frontLegSensorValues.npy',frontLegSensorValues)
