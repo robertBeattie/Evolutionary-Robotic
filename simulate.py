@@ -6,6 +6,10 @@ import numpy as np
 import random
 import constants as c
 
+
+pass
+
+"""
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
@@ -65,3 +69,5 @@ p.disconnect()
 #np.save('data//BackLeg_motorCommand.npy',BackLeg_motorCommand)
 #np.save('data//FrontLeg_motorCommand.npy',FrontLeg_motorCommand)
 exit()
+
+"""
