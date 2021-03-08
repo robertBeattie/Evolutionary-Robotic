@@ -10,16 +10,9 @@ from simulation import SIMULATION
 simulation = SIMULATION()
 
 """
-physicsClient = p.connect(p.GUI)
-p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
-# add gravity
-p.setGravity(0, 0, c.DEFAULT_GRAVITY)
 
-# add environment and objects
-planeId = p.loadURDF("plane.urdf")
-robot = p.loadURDF("body.urdf")
-p.loadSDF("world.sdf")
+
 
 pyrosim.Prepare_To_Simulate("body.urdf")
 
