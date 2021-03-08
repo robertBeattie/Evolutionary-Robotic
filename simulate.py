@@ -8,6 +8,7 @@ import constants as c
 from simulation import SIMULATION
 
 simulation = SIMULATION()
+simulation.Run()
 
 """
 
@@ -19,35 +20,7 @@ targetAngles = np.linspace(-c.PI, c.PI, c.LOOP_LENGTH)
 FrontLeg_motorCommand = c.FRONT_LEG_AMPLITUDE * np.sin(c.FRONT_LEG_FREQUENCY * targetAngles + c.FRONT_LEG_PHASE_OFFSET)
 BackLeg_motorCommand = c.BACK_LEG_AMPLITUDE * np.sin(c.BACK_LEG_FREQUENCY * targetAngles + c.BACK_LEG_PHASE_OFFSET)
 
-for i in range(c.LOOP_LENGTH):
-    p.stepSimulation()
-    backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-    frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
 
-    pyrosim.Set_Motor_For_Joint(
-
-        bodyIndex=robot,
-
-        jointName="Torso_BackLeg",
-
-        controlMode=p.POSITION_CONTROL,
-
-        targetPosition=BackLeg_motorCommand[i],
-
-        maxForce=c.LEG_MOTOR_MAX_FORCE)
-    pyrosim.Set_Motor_For_Joint(
-
-        bodyIndex=robot,
-
-        jointName="Torso_FrontLeg",
-
-        controlMode=p.POSITION_CONTROL,
-
-        targetPosition=FrontLeg_motorCommand[i],
-
-        maxForce=c.LEG_MOTOR_MAX_FORCE)
-
-    time.sleep(c.SLEEP_RATE)
 p.disconnect()
 
 
