@@ -5,9 +5,9 @@ import pyrosim.pyrosim as pyrosim
 import numpy as np
 import random
 import constants as c
+from simulation import SIMULATION
 
-
-pass
+simulation = SIMULATION()
 
 """
 physicsClient = p.connect(p.GUI)
