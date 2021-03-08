@@ -1,11 +1,14 @@
 from sensor import SENSOR
 from motor import MOTOR
+import pyrosim.pyrosim as pyrosim
 
 
 class ROBOT:
 
     def __init__(self):
-        s = 2
+        pyrosim.Prepare_To_Simulate("body.urdf")
+
+        self.s = 2
         m = 2
 
         self.sensor = SENSOR()

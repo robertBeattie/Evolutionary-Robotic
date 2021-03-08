@@ -12,10 +12,6 @@ simulation = SIMULATION()
 """
 
 
-
-
-pyrosim.Prepare_To_Simulate("body.urdf")
-
 backLegSensorValues = np.zeros(c.LOOP_LENGTH)
 frontLegSensorValues = np.zeros(c.LOOP_LENGTH)
 
