@@ -53,3 +53,12 @@ class SIMULATION:
                 maxForce=c.LEG_MOTOR_MAX_FORCE)
             '''
             time.sleep(c.SLEEP_RATE)
+
+
+
+
+
+
+    def __del__(self):
+
+        p.disconnect()
