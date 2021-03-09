@@ -8,5 +8,5 @@ class WORLD:
 
         # add environment and objects
         self.planeId = p.loadURDF("plane.urdf")
-        self.robot = p.loadURDF("body.urdf")
+        #self.robot = p.loadURDF("body.urdf")
         p.loadSDF("world.sdf")
