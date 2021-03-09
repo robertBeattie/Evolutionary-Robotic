@@ -1,7 +1,9 @@
 from world import WORLD
 from robot import ROBOT
 
+
 import constants as c
+
 import pybullet as p
 import pybullet_data
 import time
@@ -26,8 +28,8 @@ class SIMULATION:
 
 
             p.stepSimulation()
-            #backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-            #frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
+            self.robot.Sense(i)
+
             '''
             pyrosim.Set_Motor_For_Joint(
 
