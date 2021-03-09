@@ -10,8 +10,4 @@ from simulation import SIMULATION
 simulation = SIMULATION()
 simulation.Run()
 
-"""
-targetAngles = np.linspace(-c.PI, c.PI, c.LOOP_LENGTH)
 
-exit()
-"""

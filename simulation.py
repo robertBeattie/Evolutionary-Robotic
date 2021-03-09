@@ -1,13 +1,9 @@
 from world import WORLD
 from robot import ROBOT
-
-
 import constants as c
-
 import pybullet as p
 import pybullet_data
 import time
-
 
 class SIMULATION:
 
@@ -21,7 +17,6 @@ class SIMULATION:
         self.world = WORLD()
         self.robot = ROBOT()
 
-
     def Run(self):
         for i in range(c.LOOP_LENGTH):
             #print(i)
@@ -33,9 +28,6 @@ class SIMULATION:
 
 
 
-
-
-
     def __del__(self):
-
+        self.robot.Save_Values()
         p.disconnect()

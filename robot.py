@@ -46,3 +46,8 @@ class ROBOT:
             #if t == c.LOOP_LENGTH:
             print(self.motors[key])
 
+    def Save_Values(self):
+        for key in self.motors:
+            self.motors[key].Save_Values()
+        for key in self.sensors:
+            self.sensors[key].Save_Values()
