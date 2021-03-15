@@ -46,14 +46,7 @@ class ROBOT:
                 jointName = self.nn.Get_Motor_Neurons_Joint(neuronName)
                 desiredAngle = self.nn.Get_Value_Of(neuronName)
                 self.motors[jointName].Set_Value(self.robot, desiredAngle)
-                print(neuronName, jointName, desiredAngle)
 
-       #for jointName in self.motors:
-            #print(self.motors)
-            #print(jointName)
-            #self.motors[jointName].Set_Value(self.robot, t)
-            #if t == c.LOOP_LENGTH:
-                #print(self.motors[jointName])
 
     def Save_Values(self):
         for key in self.motors:
