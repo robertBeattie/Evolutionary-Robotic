@@ -55,4 +55,5 @@ class ROBOT:
             self.sensors[key].Save_Values()
 
     def Think(self):
+        self.nn.Update()
         self.nn.Print()
