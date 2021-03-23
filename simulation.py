@@ -1,6 +1,5 @@
 from world import WORLD
 from robot import ROBOT
-import generate
 import constants as c
 import pybullet as p
 import pybullet_data
