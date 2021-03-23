@@ -4,7 +4,7 @@ import numpy as np
 DEFAULT_GRAVITY = -9.8
 
 # How long the simulation should run for
-LOOP_LENGTH = 1000
+LOOP_LENGTH = 5000
 
 #
 PI = np.pi
