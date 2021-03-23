@@ -71,6 +71,11 @@ class NEURON:
 
     def Update_Hidden_Or_Motor_Neuron(self, neurons, synapses):
         self.Set_Value(0.0)
+       # print(self.Get_Name())
+        for key in synapses:
+            if key[1] == self.Get_Name():
+               # print('pre-',key,'post-',self.Get_Name())
+
 
 # -------------------------- Private methods -------------------------
 
