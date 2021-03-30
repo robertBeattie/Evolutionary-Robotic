@@ -8,8 +8,11 @@ import time
 
 class SIMULATION:
 
-    def __init__(self):
-        p.connect(p.DIRECT)
+    def __init__(self, mode):
+        if mode == 'GUI':
+            p.connect(p.GUI)
+        else:
+            p.connect(p.DIRECT)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
         # add gravity
