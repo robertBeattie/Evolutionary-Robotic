@@ -4,14 +4,14 @@
     <neuron name = "3" type = "motor"  jointName = "Torso_BackLeg" />
     <neuron name = "2" type = "sensor" linkName = "FrontLeg" />
     <neuron name = "4" type = "motor"  jointName = "Torso_FrontLeg" />
-    <synapse sourceNeuronName = "0" targetNeuronName = "3" weight = "-0.9944261541428059" />
-    <synapse sourceNeuronName = "0" targetNeuronName = "4" weight = "-0.9452648877320116" />
-    <synapse sourceNeuronName = "1" targetNeuronName = "3" weight = "0.4947255451303416" />
-    <synapse sourceNeuronName = "1" targetNeuronName = "4" weight = "0.5693581307314171" />
-    <synapse sourceNeuronName = "2" targetNeuronName = "3" weight = "-0.728143866607404" />
-    <synapse sourceNeuronName = "2" targetNeuronName = "4" weight = "-0.7476914971302768" />
-    <synapse sourceNeuronName = "3" targetNeuronName = "3" weight = "-0.8235785471148711" />
-    <synapse sourceNeuronName = "3" targetNeuronName = "4" weight = "-0.8380469205515966" />
-    <synapse sourceNeuronName = "4" targetNeuronName = "3" weight = "0.558200015807909" />
-    <synapse sourceNeuronName = "4" targetNeuronName = "4" weight = "0.8611075996866044" />
+    <synapse sourceNeuronName = "0" targetNeuronName = "3" weight = "-0.8891658695862406" />
+    <synapse sourceNeuronName = "0" targetNeuronName = "4" weight = "-0.7104797721259248" />
+    <synapse sourceNeuronName = "1" targetNeuronName = "3" weight = "-0.5646042538896048" />
+    <synapse sourceNeuronName = "1" targetNeuronName = "4" weight = "-0.10048121581885616" />
+    <synapse sourceNeuronName = "2" targetNeuronName = "3" weight = "0.09887175883463084" />
+    <synapse sourceNeuronName = "2" targetNeuronName = "4" weight = "0.36367923665973034" />
+    <synapse sourceNeuronName = "3" targetNeuronName = "3" weight = "-0.14444372229049507" />
+    <synapse sourceNeuronName = "3" targetNeuronName = "4" weight = "0.3155941756428391" />
+    <synapse sourceNeuronName = "4" targetNeuronName = "3" weight = "0.8170854460438" />
+    <synapse sourceNeuronName = "4" targetNeuronName = "4" weight = "-0.6697997772751239" />
 </neuralNetwork>

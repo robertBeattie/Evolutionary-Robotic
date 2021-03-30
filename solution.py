@@ -9,6 +9,9 @@ class SOLUTION:
         self.weights = self.weights * 2 -1
 
     def Evaluate(self):
+        self.Create_World()
+        self.Generate_Body()
+        self.Generate_Brain()
         os.system("python simulate.py")
 
 
@@ -59,9 +62,9 @@ class SOLUTION:
         # pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=4, weight=-1.0)
         # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=4, weight=-1.0)
         # loop over the names
-        for currentRow in range(weights.size.x):
+        for currentRow in range(self.weights.shape[0]):
             # loop over the motors
-            for currentColumn in range(weights.size.y):
+            for currentColumn in range(self.weights.shape[1]):
                 pyrosim.Send_Synapse(sourceNeuronName=currentRow,
                                      targetNeuronName=currentColumn + 3,
                                      weight=self.weights[currentRow][currentColumn])
