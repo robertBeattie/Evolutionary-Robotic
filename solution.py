@@ -1,6 +1,7 @@
 import numpy as np
 import pyrosim.pyrosim as pyrosim
 import random
+import os
 
 class SOLUTION:
     def __init__(self):
@@ -8,7 +9,9 @@ class SOLUTION:
         self.weights = self.weights * 2 -1
 
     def Evaluate(self):
-        pass
+        os.system("python simulate.py")
+
+
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
@@ -56,9 +59,11 @@ class SOLUTION:
         # pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=4, weight=-1.0)
         # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=4, weight=-1.0)
         # loop over the names
-        for i in range(5):
+        for currentRow in range(weights.size.x):
             # loop over the motors
-            for j in range(3, 5):
-                pyrosim.Send_Synapse(sourceNeuronName=i, targetNeuronName=j, weight=random.uniform(-1.0, 1.0))
+            for currentColumn in range(weights.size.y):
+                pyrosim.Send_Synapse(sourceNeuronName=currentRow,
+                                     targetNeuronName=currentColumn + 3,
+                                     weight=self.weights[currentRow][currentColumn])
 
         pyrosim.End()
