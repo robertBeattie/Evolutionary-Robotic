@@ -22,22 +22,15 @@ class ROBOT:
 
 
     def Prepare_To_Sense(self):
-
         for linkName in pyrosim.linkNamesToIndices:
-           # print(linkName)
             self.sensors[linkName] = SENSOR(linkName)
 
     def Sense(self, t):
         for key in self.sensors:
-            #print(self.sensors)
-            #print(key)
             self.values[t] = self.sensors[key].Get_Value(t)
-           # if t == c.LOOP_LENGTH:
-                # print(self.sensors[key])
 
     def Prepare_To_Act(self):
         for jointName in pyrosim.jointNamesToIndices:
-            #print(jointName)
             self.motors[jointName] = MOTOR(jointName)
 
     def Act(self, t):
@@ -56,7 +49,7 @@ class ROBOT:
 
     def Think(self):
         self.nn.Update()
-        self.nn.Print()
+        #self.nn.Print()
 
     def Get_Fitness(self):
         stateOfLinkZero = p.getLinkState(self.robot,0)

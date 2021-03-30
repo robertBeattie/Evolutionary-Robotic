@@ -9,7 +9,7 @@ import time
 class SIMULATION:
 
     def __init__(self):
-        self.physicsClient = p.connect(p.GUI)
+        p.connect(p.DIRECT)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
         # add gravity
@@ -20,7 +20,6 @@ class SIMULATION:
 
     def Run(self):
         for i in range(c.LOOP_LENGTH):
-            #print(i)
             p.stepSimulation()
             self.robot.Sense(i)
             self.robot.Think()

@@ -19,4 +19,4 @@ LEG_MOTOR_MAX_FORCE = 20
 # time sleep rate
 SLEEP_RATE = 1/480
 
-numberOfGenerations = 2
+numberOfGenerations = 10
