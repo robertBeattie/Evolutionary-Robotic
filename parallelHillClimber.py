@@ -9,7 +9,7 @@ class PARALLEL_HILL_CLIMBER:
         os.system('del fitness*.nndf')
         self.nextAvailableID = 0
         self.parents = {}
-        self.children = {}
+        #self.children = {}
         for i in range(c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID)
             self.nextAvailableID += 1
@@ -26,14 +26,15 @@ class PARALLEL_HILL_CLIMBER:
 
 
     def Evolve_For_One_Generation(self):
-        #self.Spawn()
+        self.Spawn()
         #self.Mutate()
         #self.child.Evaluate("DIRECT")
         #self.Print()
         #self.Select()
-        pass
+
 
     def Spawn(self):
+        self.children = {}
         for s in range(len(self.parents)):
             self.parents[s].Set_ID()
             self.children[s] = copy.deepcopy(self.parents[s])
