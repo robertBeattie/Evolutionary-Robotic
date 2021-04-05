@@ -1,5 +1,5 @@
 import os
-from hillclimber import PARALLEL_HILL_CLIMBER
+from parallelHillClimber import PARALLEL_HILL_CLIMBER
 
 
 phc = PARALLEL_HILL_CLIMBER()
