@@ -90,3 +90,4 @@ class SOLUTION:
         self.fitness = float(fitnessFile.read())
         fitnessFile.close()
         os.system('del fitness' + str(self.myID) +'.txt')
+        print(self.fitness)
