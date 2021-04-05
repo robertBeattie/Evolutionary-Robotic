@@ -9,6 +9,7 @@ import time
 class SIMULATION:
 
     def __init__(self, mode):
+        self.directOrGUI = mode
         if mode == 'GUI':
             p.connect(p.GUI)
         else:
@@ -27,8 +28,8 @@ class SIMULATION:
             self.robot.Sense(i)
             self.robot.Think()
             self.robot.Act(i)
-
-            time.sleep(c.SLEEP_RATE)
+            if self.directOrGUI == 'GUI':
+                time.sleep(c.SLEEP_RATE)
 
     def Get_Fitness(self):
         self.robot.Get_Fitness()
