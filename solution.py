@@ -4,7 +4,8 @@ import random
 import os
 
 class SOLUTION:
-    def __init__(self):
+    def __init__(self, myID):
+        self.myID = myID
         self.weights = np.random.rand(3,2)
         self.weights = self.weights * 2 -1
 
@@ -78,3 +79,5 @@ class SOLUTION:
         randomRow = random.randint(0, 2)
         randomColumn = random.randint(0, 1)
         self.weights[randomRow,randomColumn] = random.random() * 2 -1
+    def Set_ID(self):
+        self.myID
