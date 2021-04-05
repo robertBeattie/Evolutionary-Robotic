@@ -20,3 +20,4 @@ LEG_MOTOR_MAX_FORCE = 20
 SLEEP_RATE = 1/480
 
 numberOfGenerations = 10
+populationSize = 2

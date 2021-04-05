@@ -1,9 +1,9 @@
 import os
-from hillclimber import HILL_CLIMBER
+from hillclimber import PARALLEL_HILL_CLIMBER
 
 
-hc = HILL_CLIMBER()
-hc.Evolve()
+phc = PARALLEL_HILL_CLIMBER()
+phc.Evolve()
 
 #for i in range(5):
 
