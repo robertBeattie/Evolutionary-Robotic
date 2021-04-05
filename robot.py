@@ -4,12 +4,12 @@ import pyrosim.pyrosim as pyrosim
 import constants as c
 import pybullet as p
 from pyrosim.neuralNetwork import NEURAL_NETWORK
-
+import os
 
 
 class ROBOT:
 
-    def __init__(self):
+    def __init__(self, solutionID):
         self.robot = p.loadURDF("body.urdf")
         pyrosim.Prepare_To_Simulate("body.urdf")
         self.sensors = {}
@@ -17,7 +17,9 @@ class ROBOT:
         self.values = {}
         self.Prepare_To_Sense()
         self.Prepare_To_Act()
-        self.nn = NEURAL_NETWORK("brain.nndf")
+        self.nn = NEURAL_NETWORK("brain"+str(solutionID)+".nndf")
+
+        os.system("del "+"brain"+str(solutionID)+".nndf")
 
 
 
