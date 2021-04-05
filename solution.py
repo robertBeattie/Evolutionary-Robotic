@@ -13,8 +13,6 @@ class SOLUTION:
     def Evaluate(self, directOrGUI):
         pass
 
-
-
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
         length = 1
@@ -90,6 +88,6 @@ class SOLUTION:
             time.sleep(0.01)
         fitnessFile = open("fitness" + str(self.myID) + ".txt", "r")
         self.fitness = float(fitnessFile.read())
-        print(self.fitness)
+        print(self.fitness,"-fitness"+str(self.myID))
         fitnessFile.close()
-        os.system('"rm fitness'+ str(self.myID) +'.txt')
+        os.system('del fitness' + str(self.myID) +'.txt')
