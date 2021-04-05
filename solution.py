@@ -11,7 +11,7 @@ class SOLUTION:
         self.weights = self.weights * 2 -1
 
     def Evaluate(self, directOrGUI):
-
+        pass
 
 
 

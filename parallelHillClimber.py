@@ -18,7 +18,7 @@ class PARALLEL_HILL_CLIMBER:
         #    self.Evolve_For_One_Generation()
         # self.Show_Best()
         for s in range(len(self.parents)):
-            self.parents[s].Evaluate("GUI")
+            self.parents[s].Start_Simulation("GUI")
 
 
     def Evolve_For_One_Generation(self):
