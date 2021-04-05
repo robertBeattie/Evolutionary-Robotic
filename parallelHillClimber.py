@@ -5,21 +5,20 @@ import copy
 
 class PARALLEL_HILL_CLIMBER:
     def __init__(self):
-        # self.parent = SOLUTION()
-        # self.child = SOLUTION()
         self.nextAvailableID = 0
-        self.solutions = {}
+        self.parents = {}
+        self.children = {}
         for i in range(c.populationSize):
-            self.solutions[i] = SOLUTION(self.nextAvailableID)
-
+            self.parents[i] = SOLUTION(self.nextAvailableID)
+            self.nextAvailableID += 1
 
     def Evolve(self):
         # self.parent.Evaluate("GUI")
         # currentGeneration in range(c.numberOfGenerations):
         #    self.Evolve_For_One_Generation()
         # self.Show_Best()
-        for s in range(len(self.solutions)):
-            self.solutions[s].Evaluate("GUI")
+        for s in range(len(self.parents)):
+            self.parents[s].Evaluate("GUI")
 
 
     def Evolve_For_One_Generation(self):
@@ -30,11 +29,10 @@ class PARALLEL_HILL_CLIMBER:
         self.Select()
 
     def Spawn(self):
-        for s in range(len(self.solutions)):
-            self.solutions[s].Set_ID()
+        for s in range(len(self.parents)):
+            self.parents[s].Set_ID()
+            self.children[s] = copy.deepcopy(self.parents[s])
             self.nextAvailableID += 1
-
-        #self.child = copy.deepcopy(self.parent)
 
     def Mutate(self):
         self.child.Mutate()
@@ -47,4 +45,5 @@ class PARALLEL_HILL_CLIMBER:
         print('Parent:', self.parent.fitness, '<', 'Child:', self.child.fitness)
 
     def Show_Best(self):
-        self.parent.Evaluate("GUI")
+        # self.parent.Evaluate("GUI")
+        pass

@@ -55,7 +55,7 @@ class SOLUTION:
 
     def Generate_Brain(self):
         # Create World
-        pyrosim.Start_NeuralNetwork("brain.nndf")
+        pyrosim.Start_NeuralNetwork("brain"+str(self.myID)+".nndf")
         pyrosim.Send_Sensor_Neuron(name=0, linkName="Torso")
         pyrosim.Send_Sensor_Neuron(name=1, linkName="BackLeg")
         pyrosim.Send_Motor_Neuron(name=3, jointName="Torso_BackLeg")
