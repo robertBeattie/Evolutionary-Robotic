@@ -25,8 +25,8 @@ class PARALLEL_HILL_CLIMBER:
         self.Spawn()
         self.Mutate()
         self.Evaluate(self.children)
-        #self.Print()
-        #self.Select()
+        self.Print()
+        self.Select()
 
 
     def Spawn(self):
@@ -41,15 +41,25 @@ class PARALLEL_HILL_CLIMBER:
             self.children[child].Mutate()
 
     def Select(self):
-        if self.parent.fitness > self.child.fitness:
-            self.parent = self.child
+        for key in range(len(self.parents)):
+            if self.parents[key].fitness > self.children[key].fitness:
+                self.parents[key] = self.children[key]
 
     def Print(self):
-        print('Parent:', self.parent.fitness, '<', 'Child:', self.child.fitness)
+        print('\n')
+        for key in range(len(self.parents)):
+            print('Parent:', self.parents[key].fitness, '<', 'Child:', self.children[key].fitness)
+        print('\n')
 
     def Show_Best(self):
-        # self.parent.Evaluate("GUI")
-        pass
+        bestkey = 0
+        bestFit = self.parents[0].fitness
+        for key in range(len(self.parents)):
+            if self.parents[key].fitness < bestFit:
+                bestFit = self.parents[key].fitness
+                bestkey = key
+        self.parents[bestkey].Start_Simulation("GUI")
+
 
     def Evaluate(self, solutions):
         for s in range(len(solutions)):
