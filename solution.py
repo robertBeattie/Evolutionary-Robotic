@@ -14,8 +14,9 @@ class SOLUTION:
         self.Generate_Body()
         self.Generate_Brain()
         os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID))
-        fitnessFile = open("fitness.txt", "r")
+        fitnessFile = open("fitness"+ str(self.myID)+".txt", "r")
         self.fitness = float(fitnessFile.read())
+        print(self.fitness)
         fitnessFile.close()
 
 
