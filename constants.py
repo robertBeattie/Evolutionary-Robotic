@@ -17,7 +17,10 @@ targetAngles = np.linspace(-np.pi, np.pi, LOOP_LENGTH)
 # how hard the leg motor should apply force maximum
 LEG_MOTOR_MAX_FORCE = 20
 # time sleep rate
-SLEEP_RATE = 1/480
+SLEEP_RATE = 1/480 
 
-numberOfGenerations = 10
-populationSize = 10
+numberOfGenerations = 1
+populationSize = 1
+
+numSensorNeurons = 9
+numMotorNeurons  = 8
