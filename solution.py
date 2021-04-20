@@ -41,7 +41,7 @@ class SOLUTION:
         for i in range(c.numOfLegs):
             
             name = "Leg" + str(i)
-            upperLegSize = [0.2, 1, 0.2]
+            
             # calulate postion
 
             ###degress of spereation
@@ -50,7 +50,8 @@ class SOLUTION:
 
             ##Right Side
             if postion <= 45 or postion > 315:
-                UpperlegPostion = [0.5, 0, 0]
+                upperlegPostion = [0.5, 0, 0]
+                upperLegSize = [1, 0.2, 0.2]
 
                 upperJointPosition = "0.5 0 1"
                 upperJointAxis = "0 1 0"
@@ -60,43 +61,46 @@ class SOLUTION:
              
             ##Front Side
             elif postion <= 135:
-                UpperlegPostion = [0, 0.5, 0]
+                upperlegPostion = [0, 0.5, 0]
+                upperLegSize = [0.2, 1, 0.2]
 
                 upperJointPosition = "0 0.5 1"
-                upperJointAxis = "0 1 0"
+                upperJointAxis = "1 0 0"
 
                 lowerJointPosition = "0 1 0"
                 lowerJointAxis = "1 0 0"
             
             ##Left Side
             elif postion <= 225:
-                UpperlegPostion = [-0.5, 0, 0]
+                upperlegPostion = [-0.5, 0, 0]
+                upperLegSize = [1, 0.2, 0.2]
 
                 upperJointPosition = "-0.5 0 1"
-                upperJointAxis = "1 0 0"
+                upperJointAxis = "0 1 0"
 
                 lowerJointPosition = "-1 0 0"
                 lowerJointAxis = "0 1 0"
             
             ##Back Side
             else:
-                UpperlegPostion = [0, -0.5, 0]
+                upperlegPostion = [0, -0.5, 0]
+                upperLegSize = [0.2, 1, 0.2]
 
                 upperJointPosition = "0 -0.5 1"
-                upperJointAxis = "0 1 0"
+                upperJointAxis = "1 0 0"
 
-                lowerJointPosition = "-1 0 0"
-                lowerJointAxis = "0 1 0"
+                lowerJointPosition = "0 -1 0"
+                lowerJointAxis = "1 0 0"
                 
 
             #generate upper leg
-            pyrosim.Send_Cube(name="Uppper" + name, pos=UpperlegPostion, size=upperLegSize)
+            pyrosim.Send_Cube(name="Uppper" + name, pos=upperlegPostion, size=upperLegSize)
             #generate lower leg
             pyrosim.Send_Cube(name="Lower"+ name, pos=[0, 0, -.5], size=[.2, .2, 1]) 
             #generate upper joint
-            pyrosim.Send_Joint(name="Torso_Uppper" + name, parent="Torso", child=name,type="revolute", position=upperJointPosition, jointAxis = upperJointAxis)
+            pyrosim.Send_Joint(name="Torso_Uppper" + name, parent="Torso", child="Uppper" +name,type="revolute", position=upperJointPosition, jointAxis = upperJointAxis)
             #generate lower joint
-            pyrosim.Send_Joint(name= "Uppper" + name +"_Lower"+ name, parent=name, child="Lower" + name,type="revolute", position=lowerJointPosition, jointAxis = lowerJointAxis)
+            pyrosim.Send_Joint(name= "Uppper" + name +"_Lower"+ name, parent="Uppper" +name, child="Lower" + name,type="revolute", position=lowerJointPosition, jointAxis = lowerJointAxis)
             
         pyrosim.End()
         

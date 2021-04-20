@@ -22,9 +22,9 @@ SLEEP_RATE = 1/480
 numberOfGenerations = 10
 populationSize = 10
 
-numSensorNeurons = 1
-numMotorNeurons  = 1
+numSensorNeurons = 10
+numMotorNeurons  = 10
 
 motorJointRange = .2
 
-numOfLegs = 4
+numOfLegs = 1
