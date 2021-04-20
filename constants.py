@@ -26,3 +26,5 @@ numSensorNeurons = 9
 numMotorNeurons  = 8
 
 motorJointRange = .2
+
+numOfLegs = 4
