@@ -102,20 +102,27 @@ class SOLUTION:
         
 
     def Generate_Brain(self):
+        nameCount = 0
+
         # Create World
         pyrosim.Start_NeuralNetwork("brain"+str(self.myID)+".nndf")
-        pyrosim.Send_Sensor_Neuron(name=0, linkName="Torso")
+        pyrosim.Send_Sensor_Neuron(name=nameCount, linkName="Torso")
+        nameCount += 1
         #Generate Sensors
         for i in range(c.numOfLegs):
             name = "Leg" + str(i)
-            pyrosim.Send_Sensor_Neuron(name=i+1, linkName="Uppper" + name)
-            pyrosim.Send_Sensor_Neuron(name=i+c.numOfLegs+1, linkName="Lower" + name)    
+            pyrosim.Send_Sensor_Neuron(name=nameCount, linkName="Uppper" + name)
+            nameCount +=1
+            pyrosim.Send_Sensor_Neuron(name=nameCount, linkName="Lower" + name)    
+            nameCount +=1
 
         #Generate Motors
         for j in range(c.numOfLegs):
             name = "Leg" + str(j)
-            pyrosim.Send_Motor_Neuron(name=j+c.numOfLegs * 2+1 , jointName="Torso_Uppper" + name)
-            pyrosim.Send_Motor_Neuron(name=j+c.numOfLegs * 3+1 , jointName="Uppper" + name +"_Lower"+ name)
+            pyrosim.Send_Motor_Neuron(name=nameCount , jointName="Torso_Uppper" + name)
+            nameCount +=1
+            pyrosim.Send_Motor_Neuron(name=nameCount , jointName="Uppper" + name +"_Lower"+ name)
+            nameCount +=1
 
         # loop over the names
         for currentRow in range(c.numSensorNeurons):
