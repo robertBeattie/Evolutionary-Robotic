@@ -16,28 +16,15 @@ class SOLUTION:
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
-        length = 1
-        width = 1
-        height = 1
-        x = -3
-        y = 3
-        z = 0.5
-        pyrosim.Send_Cube(name="Box", pos=[x, y, z], size=[length, width, height])
-
+        pyrosim.Send_Sphere(name="BowlingBall" , pos=[-3,+3,0.5] , size=[0.5])
         pyrosim.End()
 
     def Generate_Body(self):
        # Create Robot
         pyrosim.Start_URDF("body.urdf")
-        length = 1
-        width = 1
-        height = 1
-        x = 0
-        y = 0
-        z = 1
         # Add Torso
-        pyrosim.Send_Cube(name="Torso", pos=[x, y, z], size=[length, width, height])
-
+        #pyrosim.Send_Cube(name="Torso", pos=[x, y, z], size=[length, width, height])
+        pyrosim.Send_Sphere(name="Torso" , pos=[0,0,1] , size=[0.5])
         for i in range(c.numOfLegs):
             
             name = "Leg" + str(i)

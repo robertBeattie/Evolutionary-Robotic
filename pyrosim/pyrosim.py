@@ -124,7 +124,7 @@ def Send_Link(name,pos,size,objectType):
 
         link = LINK_SDF(name,pos,size,objectType)
     else:
-        link = LINK_URDF(name,pos,size)
+        link = LINK_URDF(name,pos,size,objectType)
 
     link.Save(f)
 

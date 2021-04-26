@@ -1,7 +1,7 @@
 <sdf>
-    <model name="Box">
+    <model name="BowlingBall">
         <pose>-3 3 0.5 0 0 0 </pose>
-        <link name="Box">
+        <link name="BowlingBall">
             <inertial>
                 <mass>1.0</mass>
                 <inertia>
@@ -15,16 +15,16 @@
             </inertial>
             <collision>
                 <geometry>
-                 <box>
-                 <size>1 1 1</size>
-                 </box>
+                 <sphere>
+                 <radius>0.5</radius>
+                 </sphere>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
-                 <box>
-                 <size>1 1 1</size>
-                 </box>
+                 <sphere>
+                 <radius>0.5</radius>
+                 </sphere>
                 </geometry>
             </visual>
         </link>
