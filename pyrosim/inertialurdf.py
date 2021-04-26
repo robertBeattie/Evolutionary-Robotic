@@ -6,13 +6,13 @@ from pyrosim.commonFunctions import Save_Whitespace
 
 class INERTIAL_URDF:
 
-    def __init__(self,origin):
+    def __init__(self,origin,mass):
 
         self.depth = 2
 
         self.origin = origin
 
-        self.mass = MASS_URDF()
+        self.mass = MASS_URDF(mass)
 
         self.inertia = INERTIA_URDF()
 

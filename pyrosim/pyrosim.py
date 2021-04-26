@@ -114,7 +114,7 @@ def Prepare_To_Simulate(urdfFileName):
 
     Prepare_Joint_Dictionary(urdfFileName)
 
-def Send_Link(name,pos,size,objectType):
+def Send_Link(name,pos,size,mass,objectType):
 
     global availableLinkIndex
 
@@ -122,9 +122,9 @@ def Send_Link(name,pos,size,objectType):
 
         Start_Model(name,pos)
 
-        link = LINK_SDF(name,pos,size,objectType)
+        link = LINK_SDF(name,pos,size,mass,objectType)
     else:
-        link = LINK_URDF(name,pos,size,objectType)
+        link = LINK_URDF(name,pos,size,mass,objectType)
 
     link.Save(f)
 
@@ -241,8 +241,8 @@ def Start_Model(modelName,pos):
 
     model.Save_Start_Tag(f)
 
-def Send_Cube(name="default",pos=[0,0,0],size=[1,1,1]):
-    Send_Link(name,pos,size,"box")
+def Send_Cube(name="default",pos=[0,0,0],size=[1,1,1],mass=1.0):
+    Send_Link(name,pos,size,"box",mass)
 
-def Send_Sphere(name="default",pos=[0,0,0],size=[0.5]):
-    Send_Link(name,pos,size,"sphere")
+def Send_Sphere(name="default",pos=[0,0,0],size=[0.5],mass=1.0):
+    Send_Link(name,pos,size,"sphere",mass)

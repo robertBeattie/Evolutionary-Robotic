@@ -3,7 +3,7 @@
         <pose>-3 3 0.5 0 0 0 </pose>
         <link name="BowlingBall">
             <inertial>
-                <mass>1.0</mass>
+                <mass>sphere</mass>
                 <inertia>
                     <ixx>0.083</ixx>
                     <ixy>0.0</ixy>
