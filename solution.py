@@ -41,40 +41,15 @@ class SOLUTION:
             upperlegPostion = [x, y, 0]
 
             upperJointPosition = str(x) + " " + str(y) +" 1"
-                
-            if postion <= 45 or postion > 315:
-                upperLegSize = [1, 0.2, 0.2]
-                upperJointAxis = "0 1 0"
-
-                lowerJointPosition = "1 0 0"
-                lowerJointAxis = "0 1 0"
-             
-            ##Front Side
-            elif postion <= 135:
-                upperLegSize = [0.2, 1, 0.2]
-                upperJointAxis = "1 0 0"
-
-                lowerJointPosition = "0 1 0"
-                lowerJointAxis = "1 0 0"
             
-            ##Left Side
-            elif postion <= 225:
-                upperLegSize = [1, 0.2, 0.2]
-                upperJointAxis = "0 1 0"
 
-                lowerJointPosition = "-1 0 0"
-                lowerJointAxis = "0 1 0"
-            
-            ##Back Side
-            else:
-                upperLegSize = [0.2, 1, 0.2]
-                upperJointAxis = "1 0 0"
-
-                lowerJointPosition = "0 -1 0"
-                lowerJointAxis = "1 0 0"
+            upperJointAxis = str(x) + " " + str(y) +" 0"
+            lowerJointPosition = str(x*2)+ " " + str(y*2)+" 0"
+            lowerJointAxis = str(x) + " " + str(y) +" 0"
 
             #generate upper leg
-            pyrosim.Send_Cube(name="Uppper" + name, pos=upperlegPostion, size=upperLegSize)
+            #print('leg#:',i,"Postion:",postion)
+            pyrosim.Send_Cube(name="Uppper" + name, pos=upperlegPostion,rpy=[0,0,math.radians(float(postion))], size=[1, 0.2, 0.2])
             #generate lower leg
             pyrosim.Send_Cube(name="Lower"+ name, pos=[0, 0, -.5], size=[.2, .2, 1]) 
             #generate upper joint
