@@ -83,11 +83,7 @@
         <inertial>
             <origin xyz="3.061616997868383e-17 0.5 0" rpy="0 0 0"/>
 <<<<<<< HEAD
-<<<<<<< HEAD
             <mass value="box" />
-=======
-            <mass value="1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
             <mass value="1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -97,11 +93,7 @@
             <origin xyz="3.061616997868383e-17 0.5 0" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 1 0.2" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 1 0.2" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -114,11 +106,7 @@
             <origin xyz="3.061616997868383e-17 0.5 0" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 1 0.2" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 1 0.2" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -129,11 +117,7 @@
         <inertial>
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
 <<<<<<< HEAD
-<<<<<<< HEAD
             <mass value="box" />
-=======
-            <mass value="1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
             <mass value="1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -143,11 +127,7 @@
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 0.2 1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 0.2 1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -160,11 +140,7 @@
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 0.2 1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 0.2 1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -189,11 +165,7 @@
         <inertial>
             <origin xyz="-0.5 6.123233995736766e-17 0" rpy="0 0 0"/>
 <<<<<<< HEAD
-<<<<<<< HEAD
             <mass value="box" />
-=======
-            <mass value="1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
             <mass value="1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -203,11 +175,7 @@
             <origin xyz="-0.5 6.123233995736766e-17 0" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="1" />
-=======
-                <box size="1 0.2 0.2" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="1 0.2 0.2" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -220,11 +188,7 @@
             <origin xyz="-0.5 6.123233995736766e-17 0" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="1" />
-=======
-                <box size="1 0.2 0.2" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="1 0.2 0.2" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -235,11 +199,7 @@
         <inertial>
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
 <<<<<<< HEAD
-<<<<<<< HEAD
             <mass value="box" />
-=======
-            <mass value="1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
             <mass value="1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -249,11 +209,7 @@
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 0.2 1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 0.2 1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -266,11 +222,7 @@
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 0.2 1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 0.2 1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -295,11 +247,7 @@
         <inertial>
             <origin xyz="-9.184850993605148e-17 -0.5 0" rpy="0 0 0"/>
 <<<<<<< HEAD
-<<<<<<< HEAD
             <mass value="box" />
-=======
-            <mass value="1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
             <mass value="1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -309,11 +257,7 @@
             <origin xyz="-9.184850993605148e-17 -0.5 0" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 1 0.2" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 1 0.2" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -326,11 +270,7 @@
             <origin xyz="-9.184850993605148e-17 -0.5 0" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 1 0.2" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 1 0.2" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -341,11 +281,7 @@
         <inertial>
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
 <<<<<<< HEAD
-<<<<<<< HEAD
             <mass value="box" />
-=======
-            <mass value="1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
             <mass value="1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -355,11 +291,7 @@
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 0.2 1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 0.2 1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
@@ -372,11 +304,7 @@
             <origin xyz="0 0 -0.5" rpy="0 0 0"/>
             <geometry>
 <<<<<<< HEAD
-<<<<<<< HEAD
                 <sphere radius="0.2" />
-=======
-                <box size="0.2 0.2 1" />
->>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
 =======
                 <box size="0.2 0.2 1" />
 >>>>>>> parent of c52c6d5 (fixed motors and sensor constant)
