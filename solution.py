@@ -4,6 +4,7 @@ import random
 import os
 import time
 import constants as c
+import math 
 
 class SOLUTION:
     def __init__(self, myID):
@@ -32,15 +33,17 @@ class SOLUTION:
             # calulate postion
 
             ###degress of spereation
-            spacing = 360/c.numOfLegs
+            spacing = 360.0/c.numOfLegs
             postion = i * spacing
 
-            ##Right Side
-            if postion <= 45 or postion > 315:
-                upperlegPostion = [0.5, 0, 0]
-                upperLegSize = [1, 0.2, 0.2]
+            x = math.cos(math.radians(float(postion)))/2
+            y = math.sin(math.radians(float(postion)))/2
+            upperlegPostion = [x, y, 0]
 
-                upperJointPosition = "0.5 0 1"
+            upperJointPosition = str(x) + " " + str(y) +" 1"
+                
+            if postion <= 45 or postion > 315:
+                upperLegSize = [1, 0.2, 0.2]
                 upperJointAxis = "0 1 0"
 
                 lowerJointPosition = "1 0 0"
@@ -48,10 +51,7 @@ class SOLUTION:
              
             ##Front Side
             elif postion <= 135:
-                upperlegPostion = [0, 0.5, 0]
                 upperLegSize = [0.2, 1, 0.2]
-
-                upperJointPosition = "0 0.5 1"
                 upperJointAxis = "1 0 0"
 
                 lowerJointPosition = "0 1 0"
@@ -59,10 +59,7 @@ class SOLUTION:
             
             ##Left Side
             elif postion <= 225:
-                upperlegPostion = [-0.5, 0, 0]
                 upperLegSize = [1, 0.2, 0.2]
-
-                upperJointPosition = "-0.5 0 1"
                 upperJointAxis = "0 1 0"
 
                 lowerJointPosition = "-1 0 0"
@@ -70,15 +67,11 @@ class SOLUTION:
             
             ##Back Side
             else:
-                upperlegPostion = [0, -0.5, 0]
                 upperLegSize = [0.2, 1, 0.2]
-
-                upperJointPosition = "0 -0.5 1"
                 upperJointAxis = "1 0 0"
 
                 lowerJointPosition = "0 -1 0"
                 lowerJointAxis = "1 0 0"
-                
 
             #generate upper leg
             pyrosim.Send_Cube(name="Uppper" + name, pos=upperlegPostion, size=upperLegSize)
