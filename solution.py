@@ -42,24 +42,28 @@ class SOLUTION:
 
             upperJointPosition = str(x) + " " + str(y) +" 1"
             
-
-            upperJointAxis = str(x) + " " + str(y) +" 0"
+            upperJointAxis = str(abs(y*2)) + " " + str(abs(x*2)) +" 0"
             lowerJointPosition = str(x*2)+ " " + str(y*2)+" 0"
-            lowerJointAxis = str(x) + " " + str(y) +" 0"
+            lowerJointAxis = str(abs(y*2)) + " " + str(abs(x*2)) +" 0"
+
+           
+            #print('leg#:',i,"Postion:",postion)
+            #print('leg',i,', upperJointPosition:',upperJointPosition)
+            #print('leg',i,', upperJointAxis',upperJointAxis)
+            #print('leg',i,', lowerJointPosition',lowerJointPosition)
+            #print('leg',i,', lowerJointAxis',lowerJointAxis,'\n')
 
             #generate upper leg
-            #print('leg#:',i,"Postion:",postion)
             pyrosim.Send_Cube(name="Uppper" + name, pos=upperlegPostion,rpy=[0,0,math.radians(float(postion))], size=[1, 0.2, 0.2])
             #generate lower leg
-            pyrosim.Send_Cube(name="Lower"+ name, pos=[0, 0, -.5], size=[.2, .2, 1]) 
+            pyrosim.Send_Cube(name="Lower"+ name, pos=[0, 0, -.5],rpy=[0,0,math.radians(float(postion))], size=[.2, .2, 1]) 
             #generate upper joint
             pyrosim.Send_Joint(name="Torso_Uppper" + name, parent="Torso", child="Uppper" +name,type="revolute", position=upperJointPosition, jointAxis = upperJointAxis)
             #generate lower joint
             pyrosim.Send_Joint(name= "Uppper" + name +"_Lower"+ name, parent="Uppper" +name, child="Lower" + name,type="revolute", position=lowerJointPosition, jointAxis = lowerJointAxis)
             
         pyrosim.End()
-        
-
+        #exit()
     def Generate_Brain(self):
         nameCount = 0
 
