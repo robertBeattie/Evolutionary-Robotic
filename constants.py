@@ -20,11 +20,11 @@ LEG_MOTOR_MAX_FORCE = 20
 SLEEP_RATE = 1/480 
 
 numberOfGenerations = 10
-populationSize = 10
+populationSize = 20
 
 motorJointRange = .2
 
-numOfLegs = 1
+numOfLegs = 4
 
 
 numSensorNeurons = numOfLegs * 2
