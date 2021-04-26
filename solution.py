@@ -17,7 +17,7 @@ class SOLUTION:
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
-        pyrosim.Send_Sphere(name="BowlingBall" , pos=[-3,+3,0.5] , size=[0.5], mass=1)
+        pyrosim.Send_Sphere(name="BowlingBall" , pos=[-3,+3,0.5] , size=[0.5])
         pyrosim.End()
 
     def Generate_Body(self):
@@ -25,7 +25,7 @@ class SOLUTION:
         pyrosim.Start_URDF("body.urdf")
         # Add Torso
         #pyrosim.Send_Cube(name="Torso", pos=[x, y, z], size=[length, width, height])
-        pyrosim.Send_Sphere(name="Torso" , pos=[0,0,1] , size=[0.5],mass=.5)
+        pyrosim.Send_Sphere(name="Torso" , pos=[0,0,1] , size=[0.5])
         for i in range(c.numOfLegs):
             
             name = "Leg" + str(i)
@@ -74,9 +74,9 @@ class SOLUTION:
                 lowerJointAxis = "1 0 0"
 
             #generate upper leg
-            pyrosim.Send_Cube(name="Uppper" + name, pos=upperlegPostion, size=upperLegSize,mass=.25)
+            pyrosim.Send_Cube(name="Uppper" + name, pos=upperlegPostion, size=upperLegSize)
             #generate lower leg
-            pyrosim.Send_Cube(name="Lower"+ name, pos=[0, 0, -.5], size=[.2, .2, 1],mass=.25) 
+            pyrosim.Send_Cube(name="Lower"+ name, pos=[0, 0, -.5], size=[.2, .2, 1]) 
             #generate upper joint
             pyrosim.Send_Joint(name="Torso_Uppper" + name, parent="Torso", child="Uppper" +name,type="revolute", position=upperJointPosition, jointAxis = upperJointAxis)
             #generate lower joint

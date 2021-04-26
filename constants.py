@@ -19,12 +19,12 @@ LEG_MOTOR_MAX_FORCE = 20
 # time sleep rate
 SLEEP_RATE = 1/480 
 
-numberOfGenerations = 1
-populationSize = 1
+numberOfGenerations = 10
+populationSize = 10
 
 motorJointRange = .2
 
-numOfLegs = 4
+numOfLegs = 1
 
 
 numSensorNeurons = numOfLegs * 2

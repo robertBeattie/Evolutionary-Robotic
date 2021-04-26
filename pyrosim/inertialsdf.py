@@ -6,11 +6,11 @@ from pyrosim.commonFunctions import Save_Whitespace
 
 class INERTIAL_SDF:
 
-    def __init__(self,mass):
+    def __init__(self):
 
         self.depth = 3
 
-        self.mass = MASS_SDF(mass)
+        self.mass = MASS_SDF()
 
         self.inertia = INERTIA_SDF()
 
