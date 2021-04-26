@@ -27,5 +27,5 @@ motorJointRange = .2
 numOfLegs = 4
 
 
-numSensorNeurons = numOfLegs * 2
-numMotorNeurons  = (numOfLegs * 2) +1
+numSensorNeurons = numOfLegs
+numMotorNeurons  = numOfLegs *2
