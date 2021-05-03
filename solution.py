@@ -125,7 +125,7 @@ class SOLUTION:
 
     def Wait_For_Simulation_To_End(self):
         fitnessFileName = "fitness" + str(self.myID) + ".txt"
-        max_time = 20
+        max_time = 40
         cur_time = 0
         while not os.path.exists(fitnessFileName) and cur_time < max_time:
             #if self.myID % 10 != 0:
