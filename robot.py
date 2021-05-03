@@ -52,12 +52,8 @@ class ROBOT:
 
     def Think(self):
         self.nn.Update()
-        #self.nn.Print()
 
     def Get_Fitness(self):
-        #stateOfLinkZero = p.getLinkState(self.robot,0)
-        #positionOfLinkZero = stateOfLinkZero[0]
-        #xCoordinateOfLinkZero = positionOfLinkZero[0]
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robot)
         basePosition = basePositionAndOrientation[0]
         xCoordinateOfLinkZero = basePosition[0]

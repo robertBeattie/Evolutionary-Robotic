@@ -68,6 +68,7 @@ class SOLUTION:
         nameCount = 0
 
         # Create World
+        #if()
         pyrosim.Start_NeuralNetwork("brain"+str(self.myID)+".nndf")
         pyrosim.Send_Sensor_Neuron(name=nameCount, linkName="Torso")
         nameCount += 1
