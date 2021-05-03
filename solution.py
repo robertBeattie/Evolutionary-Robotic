@@ -113,10 +113,28 @@ class SOLUTION:
         os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID))
 
 
+  #  def Wait_For_Simulation_To_End(self):
+  #      while not os.path.exists("fitness" + str(self.myID) + ".txt"):
+  #          time.sleep(0.01)
+  #      fitnessFile = open("fitness" + str(self.myID) + ".txt", "r")
+  #      self.fitness = float(fitnessFile.read())
+  #      fitnessFile.close()
+  #      os.system('del fitness' + str(self.myID) +'.txt')
+
+
     def Wait_For_Simulation_To_End(self):
-        while not os.path.exists("fitness" + str(self.myID) + ".txt"):
-            time.sleep(0.01)
-        fitnessFile = open("fitness" + str(self.myID) + ".txt", "r")
-        self.fitness = float(fitnessFile.read())
-        fitnessFile.close()
-        os.system('del fitness' + str(self.myID) +'.txt')
+        fitnessFileName = "fitness" + str(self.myID) + ".txt"
+        max_time = 20
+        cur_time = 0
+        while not os.path.exists(fitnessFileName) and cur_time < max_time:
+            #if self.myID % 10 != 0:
+            #    print(fitnessFileName)
+            time.sleep(0.05)
+            cur_time = cur_time + 1
+        if cur_time >= max_time:
+            self.fitness = -100
+        else:
+            f = open(fitnessFileName, "r")
+            self.fitness = float(f.read())
+            f.close()
+            os.system("del " + fitnessFileName)
