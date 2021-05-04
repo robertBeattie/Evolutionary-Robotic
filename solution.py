@@ -133,7 +133,7 @@ class SOLUTION:
             time.sleep(0.05)
             cur_time = cur_time + 1
         if cur_time >= max_time:
-            self.fitness = -100
+            self.fitness = 100
         else:
             f = open(fitnessFileName, "r")
             self.fitness = float(f.read())

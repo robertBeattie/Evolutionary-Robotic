@@ -6,7 +6,6 @@ import pybullet as p
 from pyrosim.neuralNetwork import NEURAL_NETWORK
 import os
 
-
 class ROBOT:
 
     def __init__(self, solutionID):
@@ -57,6 +56,7 @@ class ROBOT:
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robot)
         basePosition = basePositionAndOrientation[0]
         xCoordinateOfLinkZero = basePosition[0]
+        #fit = xCoordinateOfLinkZero - (abs(basePosition[1])/2)
         f = open("tmp"+str(self.solutionID)+".txt", "w")
         f.write(str(xCoordinateOfLinkZero))
         f.close()
