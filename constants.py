@@ -4,7 +4,7 @@ import numpy as np
 DEFAULT_GRAVITY = -9.8
 
 # How long the simulation should run for
-LOOP_LENGTH = 1000
+LOOP_LENGTH = 2000
 
 #
 PI = np.pi
@@ -22,9 +22,9 @@ SLEEP_RATE = 1/480
 numberOfGenerations = 10
 populationSize = 10
 
-motorJointRange = .5
+motorJointRange = .4
 
-numOfLegs = 4
+numOfLegs = 6
 
 
 numSensorNeurons = numOfLegs * 2
