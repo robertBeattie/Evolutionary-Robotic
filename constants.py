@@ -24,7 +24,7 @@ populationSize = 10
 
 motorJointRange = .5
 
-numOfLegs = 25
+numOfLegs = 4
 
 
 numSensorNeurons = numOfLegs * 2

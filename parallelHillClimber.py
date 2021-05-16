@@ -2,6 +2,7 @@ from solution import SOLUTION
 import constants as c
 import copy
 import os
+import numpy as np
 
 class PARALLEL_HILL_CLIMBER:
     def __init__(self):
@@ -10,7 +11,7 @@ class PARALLEL_HILL_CLIMBER:
         os.system('del temp*.txt')
         self.nextAvailableID = 0
         self.parents = {}
-        #self.children = {}
+        self.dataRecord = np.zeros((c.populationSize,c.numberOfGenerations))
         for i in range(c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID)
             self.nextAvailableID += 1
@@ -18,8 +19,13 @@ class PARALLEL_HILL_CLIMBER:
     def Evolve(self):
         # self.parent.Evaluate("GUI")
         self.Evaluate(self.parents)
-        for currentGeneration in range(c.numberOfGenerations):
+        for g in range(c.numberOfGenerations):
             self.Evolve_For_One_Generation()
+            for p in range(c.populationSize):
+                answer = self.parents.get(p).fitness
+                #data = round(answer, 2)
+                self.dataRecord.itemset((p, g), answer)
+
 
 
     def Evolve_For_One_Generation(self):
@@ -43,7 +49,7 @@ class PARALLEL_HILL_CLIMBER:
 
     def Select(self):
         for key in range(len(self.parents)):
-            if self.parents[key].fitness > self.children[key].fitness:
+            if self.parents[key].fitness < self.children[key].fitness:
                 self.parents[key] = self.children[key]
 
     def Print(self):
@@ -56,7 +62,7 @@ class PARALLEL_HILL_CLIMBER:
         bestkey = 0
         bestFit = self.parents[0].fitness
         for key in range(len(self.parents)):
-            if self.parents[key].fitness < bestFit:
+            if self.parents[key].fitness > bestFit:
                 bestFit = self.parents[key].fitness
                 bestkey = key
         print("Number of Legs: " +str(c.numOfLegs)+ ", Best Key: "+str(bestkey)+", Best Fit: "+str(bestFit))
@@ -68,3 +74,7 @@ class PARALLEL_HILL_CLIMBER:
             solutions[s].Start_Simulation("DIRECT")
         for s in range(len(solutions)):
             solutions[s].Wait_For_Simulation_To_End()
+
+    def Results(self):
+        np.savetxt('results'+str(c.numOfLegs)+'.out', self.dataRecord, delimiter=',', fmt = '%.4f')
+        np.save('results'+str(c.numOfLegs)+'.npy',self.dataRecord)

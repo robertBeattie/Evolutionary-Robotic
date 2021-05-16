@@ -55,7 +55,7 @@ class ROBOT:
     def Get_Fitness(self):
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robot)
         basePosition = basePositionAndOrientation[0]
-        xCoordinateOfLinkZero = basePosition[0]
+        xCoordinateOfLinkZero = basePosition[0] * -1
         #fit = xCoordinateOfLinkZero - (abs(basePosition[1])/2)
         f = open("tmp"+str(self.solutionID)+".txt", "w")
         f.write(str(xCoordinateOfLinkZero))
