@@ -5,6 +5,7 @@ import constants as c
 import pybullet as p
 from pyrosim.neuralNetwork import NEURAL_NETWORK
 import os
+import time
 
 class ROBOT:
 

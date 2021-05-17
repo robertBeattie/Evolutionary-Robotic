@@ -15,6 +15,8 @@ class PARALLEL_HILL_CLIMBER:
         for i in range(c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID)
             self.nextAvailableID += 1
+        self.parents[0].Create_World()
+        self.parents[0].Generate_Body()
 
     def Evolve(self):
         # self.parent.Evaluate("GUI")

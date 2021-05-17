@@ -108,8 +108,7 @@ class SOLUTION:
         self.myID
 
     def Start_Simulation(self, directOrGUI):
-        self.Create_World()
-        self.Generate_Body()
+
         self.Generate_Brain()
         os.system("start /B python simulate.py " + directOrGUI + " " + str(self.myID))
 
