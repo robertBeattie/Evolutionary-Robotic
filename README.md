@@ -4,4 +4,4 @@ CS 206 Evolutionary Robotic Assignments
 *images*
 
 ##
-[![embed.png](embed.png](https://www.youtube.com/watch?v=E9N7tms4f_Y)
+[![embed.png](embed.png)](https://www.youtube.com/watch?v=E9N7tms4f_Y)
